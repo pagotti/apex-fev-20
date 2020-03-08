@@ -4,13 +4,13 @@
   </div>
   <div class="col-6 text-right">
     <button type="button" class="btn btn-primary pad-r" (click)="novo()">Adicionar</button>
-    <button type="button" class="btn btn-danger pad-r" *ngIf="adding" (click)="salvar()">Salvar</button>
+    <button type="button" class="btn btn-danger pad-r" *ngIf="painel" (click)="salvar()">Salvar</button>
   </div>
 </div>
 
 <p *ngIf="!usuarios"><em>Loading...</em></p>
 
-<div class="row" *ngIf="adding">
+<div class="row" *ngIf="painel">
   <div class="col-4 form-group">
     <label>Nome</label>
     <input type="text" class="form-control" [(ngModel)]="nome">
@@ -28,6 +28,7 @@
       <th>Nome</th>
       <th>Idade</th>
       <th></th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -35,7 +36,8 @@
       <td>{{ usuario.id }}</td>
       <td>{{ usuario.nome }}</td>
       <td>{{ usuario.idade }}</td>
-      <td><button class="btn btn-danger" type="button" (click)="excluir(usuario.id)">Excluir</button></td>
+      <td class="coluna-btn"><button class="btn btn-sm btn-success" type="button" (click)="alterar(usuario)">Editar</button></td>
+      <td class="coluna-btn"><button class="btn btn-sm btn-danger" type="button" (click)="excluir(usuario.id)">Excluir</button></td>
     </tr>
   </tbody>
 </table>

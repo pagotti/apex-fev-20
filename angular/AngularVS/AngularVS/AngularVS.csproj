@@ -32,6 +32,23 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20200306225024_blog.cs" />
+    <Compile Remove="Migrations\20200306225024_blog.Designer.cs" />
+    <Compile Remove="Migrations\20200306225205_blog.cs" />
+    <Compile Remove="Migrations\20200306225205_blog.Designer.cs" />
+    <Compile Remove="Migrations\20200306230652_blog.cs" />
+    <Compile Remove="Migrations\20200306230652_blog.Designer.cs" />
+    <Compile Remove="Migrations\20200306233031_blog.cs" />
+    <Compile Remove="Migrations\20200306233031_blog.Designer.cs" />
+    <Compile Remove="Migrations\20200306233447_blog.cs" />
+    <Compile Remove="Migrations\20200306233447_blog.Designer.cs" />
+    <Compile Remove="Migrations\20200306234538_blog.cs" />
+    <Compile Remove="Migrations\20200306234538_blog.Designer.cs" />
+    <Compile Remove="Migrations\20200306234840_blog.cs" />
+    <Compile Remove="Migrations\20200306234840_blog.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="ClientApp\src\app\usuario\usuario.service.ts" />
     <None Remove="ClientApp\src\app\usuario\usuario.ts" />
   </ItemGroup>

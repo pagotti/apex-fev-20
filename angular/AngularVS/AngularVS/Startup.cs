@@ -53,7 +53,7 @@ namespace AngularVS
             }
 
             app.UseRouting();
-
+                
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(

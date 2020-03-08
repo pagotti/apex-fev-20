@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace AngularVS.Models
@@ -15,5 +16,10 @@ namespace AngularVS.Models
 
         public int Idade { get; set; }
 
+        [JsonIgnore]
+        public ICollection<Postagem> Postagems { get; set; }
+
+        [JsonIgnore]
+        public ICollection<Comentario> Comentarios { get; set; }
     }
 }
