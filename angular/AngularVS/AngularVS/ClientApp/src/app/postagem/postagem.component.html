@@ -1,18 +1,18 @@
 <div class="container">
   <div class="row">
-    <div class="col-4">
-      <h3>Titulo</h3>
+    <div class="col-10 bg-primary">
+      <h3>{{postagem.titulo}}</h3>
     </div>
-    <div class="col-8">
-      <p>Data</p>
+    <div class="col-2 bg-info text-right">
+      <p>{{postagem.data}}</p>
     </div>
   </div>
   <div class="row">
-    <div class="col-8">
-      Texto da postagem
+    <div class="col-8 bg-secondary">
+      {{postagem.texto}}
     </div>
-    <div class="col-4">
-      Imagem
+    <div class="col-4 bg-warning">
+      <img [src]="postagem.imagem" />
     </div>
   </div>
 </div>

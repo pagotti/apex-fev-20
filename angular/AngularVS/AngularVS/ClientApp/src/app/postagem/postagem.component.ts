@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Postagem } from './postagem';
 
 @Component({
   selector: 'app-postagem',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PostagemComponent implements OnInit {
 
+  @Input()
+  postagem: Postagem = new Postagem();
+
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit() { 
   }
 
 }

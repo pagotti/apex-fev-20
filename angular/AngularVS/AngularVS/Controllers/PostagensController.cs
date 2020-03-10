@@ -25,8 +25,7 @@ namespace AngularVS.Controllers
         public async Task<ActionResult<IEnumerable<Postagem>>> GetPostagens()
         {
             var postagens = _context.Postagens.
-                Include(p => p.Autor).
-                Include(p => p.Comentarios);
+                Include(p => p.Autor);
             return await postagens.ToListAsync();
         }
 
@@ -34,7 +33,12 @@ namespace AngularVS.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<Postagem>> GetPostagem(int id)
         {
-            var postagem = await _context.Postagens.FindAsync(id);
+            var postagens = _context.Postagens.
+                Include(p => p.Autor).
+                Include(p => p.Comentarios).
+                ThenInclude(p => p.Autor);
+
+            var postagem = await postagens.FirstOrDefaultAsync(x => x.Id == id);
 
             if (postagem == null)
             {
