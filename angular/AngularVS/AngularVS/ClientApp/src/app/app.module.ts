@@ -15,6 +15,7 @@ import { HeaderComponent } from './header/header.component';
 import { MinipostComponent } from './minipost/minipost.component';
 import { PostcompletoComponent } from './postcompleto/postcompleto.component';
 import { ComentarioComponent } from './comentario/comentario.component';
+import { ComentadorComponent } from './comentador/comentador.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { ComentarioComponent } from './comentario/comentario.component';
     HeaderComponent,
     MinipostComponent,
     PostcompletoComponent,
-    ComentarioComponent
+    ComentarioComponent,
+    ComentadorComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

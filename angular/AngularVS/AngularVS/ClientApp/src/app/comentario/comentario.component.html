@@ -1,0 +1,17 @@
+<div class="row">
+  <div class="col-10">
+    <h6>{{comentario.autor.nome}}</h6>
+  </div>
+  <div class="col-2">
+    {{comentario.data}}
+  </div>
+</div>
+<div class="row">
+  <div class="col-10">
+    {{comentario.texto}}
+  </div>
+  <div class="col-2">
+    <button class="btn btn-success btn-sm" (click)="editar.emit()">Editar</button>
+    <button class="btn btn-danger btn-sm" (click)="excluir.emit()">Excluir</button>
+  </div>
+</div>

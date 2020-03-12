@@ -5,7 +5,7 @@ export class Postagem {
   titulo: string;
   data: Date;
   texto: string;
-  imagem: string;
+  imagem: string = "null.png";
   autorid: number;
   comentarios: Comentario[];
 

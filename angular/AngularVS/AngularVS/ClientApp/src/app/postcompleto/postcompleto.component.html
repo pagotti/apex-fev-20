@@ -1,0 +1,7 @@
+<app-postagem [postagem]="postagemcompleta"></app-postagem>
+<app-comentador [postagem]="postagemcompleta"></app-comentador>
+<ul class="list-group">
+  <li *ngFor="let c of postagemcompleta.comentarios" class="list-group-item">
+    <app-comentario [comentario]="c" (editar)="editar(c)" (excluir)="excluir(c)"></app-comentario>
+  </li>
+</ul>

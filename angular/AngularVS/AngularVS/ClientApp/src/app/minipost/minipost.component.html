@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="media">
+    <div class="media-body">
+      <h5 class="mt-0 mb-1">{{postagem.titulo}}</h5>
+      <div class="row">
+        <div class="col-sm-10">
+          <p class="text-truncate">
+            {{postagem.texto}}
+          </p>
+          <a class="btn btn-primary btn-sm" href="/post/{{postagem.id}}">Ler mais</a>
+        </div>
+        <div class="col-sm-2">
+          <img [src]="postagem.imagem" class="ml-3" alt="mini" width="80" height="80">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

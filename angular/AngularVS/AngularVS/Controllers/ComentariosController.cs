@@ -32,7 +32,8 @@ namespace AngularVS.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<Comentario>> GetComentario(int id)
         {
-            var comentario = await _context.Comentarios.FindAsync(id);
+            var comentario = await _context.Comentarios.
+                Include(p => p.Autor).FirstOrDefaultAsync(x => x.Id == id);
 
             if (comentario == null)
             {
@@ -83,7 +84,10 @@ namespace AngularVS.Controllers
             _context.Comentarios.Add(comentario);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetComentario", new { id = comentario.Id }, comentario);
+            var result = await _context.Comentarios.
+                Include(p => p.Autor).FirstOrDefaultAsync(x => x.Id == comentario.Id);
+
+            return CreatedAtAction("GetComentario", new { id = comentario.Id }, result);
         }
 
         // DELETE: api/Comentarios/5
