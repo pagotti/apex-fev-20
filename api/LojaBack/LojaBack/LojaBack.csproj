@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20200317001700_loja.cs" />
+    <Compile Remove="Migrations\20200317001700_loja.Designer.cs" />
+    <Compile Remove="Migrations\20200317002123_loja.cs" />
+    <Compile Remove="Migrations\20200317002123_loja.Designer.cs" />
+    <Compile Remove="Migrations\20200317002510_loja.cs" />
+    <Compile Remove="Migrations\20200317002510_loja.Designer.cs" />
+    <Compile Remove="Migrations\20200317002633_loja.cs" />
+    <Compile Remove="Migrations\20200317002633_loja.Designer.cs" />
+    <Compile Remove="Migrations\20200317002721_loja.cs" />
+    <Compile Remove="Migrations\20200317002721_loja.Designer.cs" />
+    <Compile Remove="Migrations\20200317002934_loja.cs" />
+    <Compile Remove="Migrations\20200317002934_loja.Designer.cs" />
+    <Compile Remove="Migrations\20200317003141_loja.cs" />
+    <Compile Remove="Migrations\20200317003141_loja.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.1" />
+  </ItemGroup>
+
+
+</Project>
