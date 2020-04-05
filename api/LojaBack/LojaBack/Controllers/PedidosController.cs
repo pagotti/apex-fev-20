@@ -6,11 +6,13 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using LojaBack.Models;
+using Microsoft.AspNetCore.Cors;
 
 namespace LojaBack.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [EnableCors]
     public class PedidosController : ControllerBase
     {
         private readonly LojaDbContext _context;

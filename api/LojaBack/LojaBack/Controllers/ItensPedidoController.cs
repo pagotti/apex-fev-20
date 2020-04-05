@@ -6,11 +6,13 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using LojaBack.Models;
+using Microsoft.AspNetCore.Cors;
 
 namespace LojaBack.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [EnableCors]
     public class ItensPedidoController : ControllerBase
     {
         private readonly LojaDbContext _context;
@@ -32,6 +34,22 @@ namespace LojaBack.Controllers
         public async Task<ActionResult<ItemPedido>> GetItemPedido(int id)
         {
             var itemPedido = await _context.ItensPedido.FindAsync(id);
+
+            if (itemPedido == null)
+            {
+                return NotFound();
+            }
+
+            return itemPedido;
+        }
+
+
+        [HttpGet()]
+        [Route("pedido/{pedidoId}/produto/{produtoId}")]
+        public async Task<ActionResult<ItemPedido>> GetItemPedido(int pedidoId, int produtoId)
+        {
+            var itemPedido = await _context.ItensPedido.
+                FirstOrDefaultAsync(x => x.PedidoId == pedidoId && x.ProdutoId == produtoId);
 
             if (itemPedido == null)
             {

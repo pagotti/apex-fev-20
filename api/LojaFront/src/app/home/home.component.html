@@ -1,0 +1,7 @@
+<div class="container">
+    <div *ngFor="let row of rows" class="row">
+        <div *ngFor="let p of row" class="col-sm-4">
+            <app-produto (adicionar)="adicionar()" (remover)="remover()" [produto]="p"></app-produto>
+        </div>
+    </div>
+</div>

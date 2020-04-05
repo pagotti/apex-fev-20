@@ -43,6 +43,13 @@ namespace LojaBack
 
             app.UseRouting();
 
+            if (env.IsDevelopment())
+            {
+                app.UseCors(builder => {
+                    builder.WithOrigins("http://localhost:4200").AllowAnyHeader();
+                });
+            }
+
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
